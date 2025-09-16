@@ -1,14 +1,22 @@
-# Core app
+# Framework utama
 streamlit>=1.33,<2
+streamlit-option-menu==0.3.6
+streamlit-folium>=0.20
+
+# Analisis data
 pandas>=2.1
 numpy>=1.26
+
+# Visualisasi
+matplotlib>=3.8,<3.10
 altair>=5
 folium>=0.15
 pydeck>=0.8
-pyarrow>=15
-streamlit-option-menu==0.3.6
 
 # Database
 SQLAlchemy>=2.0,<3
 PyMySQL>=1.1
-python-dotenv>=1.0  # opsional, kalau pakai .env lokal
+
+# File I/O
+openpyxl>=3.1   # untuk ekspor Excel
+xlrd>=2.0       # untuk baca file .xls lama (opsional, hanya jika ada)
