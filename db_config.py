@@ -5,6 +5,10 @@ from sqlalchemy import create_engine
 # Kebijakan retensi (hari)
 DATA_RETENTION_DAYS = int(os.getenv("DATA_RETENTION_DAYS", "365"))
 
+engine = get_engine()
+with engine.connect() as conn:
+    print(conn.execute("SELECT NOW()").fetchone())
+    
 def _build_local_url():
     user = os.getenv("DB_USER", "root")
     pwd  = os.getenv("DB_PASS", "")
@@ -41,3 +45,4 @@ def get_db_name():
 
 def get_retention_days():
     return DATA_RETENTION_DAYS
+
