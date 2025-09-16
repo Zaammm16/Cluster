@@ -14,12 +14,7 @@ def _build_local_url() -> str:
 
 @st.cache_resource
 def get_engine():
-    """
-    Urutan prioritas URL:
-      1) st.secrets["db_url"]
-      2) os.environ["DATABASE_URL"]
-      3) fallback MySQL lokal
-    """
+    # Jangan gunakan st.secrets.get(...)
     if "db_url" in st.secrets:
         url = st.secrets["db_url"]
     elif os.getenv("DATABASE_URL"):
